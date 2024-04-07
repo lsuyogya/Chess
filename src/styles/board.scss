@@ -1,0 +1,32 @@
+.board {
+  // background-color: red;
+  height: 100dvh;
+  width: 100dvh;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  outline: 1px solid black;
+  .row {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .row:nth-child(even) .square:nth-child(even),
+  .row:nth-child(odd) .square:nth-child(odd) {
+    background: hsl(27, 100%, 28%);
+  }
+
+  .row:nth-child(even) .square:nth-child(odd),
+  .row:nth-child(odd) .square:nth-child(even) {
+    background: hsl(27, 100%, 80%);
+  }
+  .square {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    // color: red;
+  }
+}
